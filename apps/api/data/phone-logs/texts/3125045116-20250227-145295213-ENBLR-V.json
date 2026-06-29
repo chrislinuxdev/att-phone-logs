@@ -1,0 +1,2333 @@
+{
+  "content": {
+    "145295213": {
+      "3125045116": {
+        "totalCharges": 0,
+        "PaginationInfo": {
+          "moreRecordsPresent": false,
+          "nextSetAvailable": false,
+          "offset": 0,
+          "totalRecordsReturned": 231,
+          "totalRecordsAvailable": 231,
+          "nextOffsetToCall": 0
+        },
+        "UsageDetailList": [
+          {
+            "dateTime": "02/27/2025 08:30:11 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "779.220.5827",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/27/2025 07:49:17 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "779.220.5827",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/27/2025 01:41:10 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "82289",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/27/2025 11:53:54 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "36726",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/27/2025 11:48:50 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "84706",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/27/2025 11:48:50 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "84706",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/26/2025 04:52:18 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/26/2025 04:52:18 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/25/2025 03:04:20 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "48267",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/25/2025 11:27:43 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "51004",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/25/2025 11:27:43 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "51004",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/25/2025 10:25:50 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "847.383.0295",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/25/2025 10:25:49 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "847.383.0295",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/25/2025 10:02:52 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "847.383.0295",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/25/2025 10:02:52 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "847.383.0295",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/24/2025 01:48:50 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/24/2025 01:48:50 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/24/2025 01:40:05 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "24273",
+            "direction": "INCOMING",
+            "nickName": "Chase Short Code"
+          },
+          {
+            "dateTime": "02/24/2025 01:40:05 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "24273",
+            "direction": "INCOMING",
+            "nickName": "Chase Short Code"
+          },
+          {
+            "dateTime": "02/24/2025 09:01:05 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/24/2025 09:01:05 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 08:06:29 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 08:06:29 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 08:04:32 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 08:04:32 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 07:43:05 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 07:43:05 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 09:02:13 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 08:46:01 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 08:46:01 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 08:46:01 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 08:30:19 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 08:30:19 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 08:28:23 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 07:47:51 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 07:45:52 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/23/2025 07:45:52 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/22/2025 08:00:58 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/22/2025 08:00:58 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/22/2025 02:45:43 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/22/2025 02:45:43 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/21/2025 06:37:42 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "77598",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/20/2025 01:37:39 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/20/2025 01:37:39 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/20/2025 01:05:25 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "47458",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/20/2025 09:44:21 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "779.220.5827",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/20/2025 09:34:05 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "779.220.5827",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/20/2025 09:10:14 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "779.220.5827",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/19/2025 01:23:48 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "779.220.5827",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/19/2025 01:23:48 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "779.220.5827",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/19/2025 01:23:47 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "779.220.5827",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/19/2025 01:23:47 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "779.220.5827",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/19/2025 01:23:47 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "779.220.5827",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/19/2025 01:23:47 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "779.220.5827",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/19/2025 01:00:00 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46962",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/19/2025 01:00:00 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46962",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/19/2025 10:46:40 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "843.823.1506",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/19/2025 10:46:39 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "843.823.1506",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/18/2025 09:25:21 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/18/2025 09:25:21 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/18/2025 08:05:56 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/18/2025 07:37:29 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "417.825.5910",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/18/2025 05:33:35 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/18/2025 05:33:05 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.812.1634",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/18/2025 05:31:28 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/18/2025 05:29:43 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.812.1634",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/17/2025 08:54:51 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "765.215.8370",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/17/2025 08:54:35 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/17/2025 08:54:09 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "765.215.8370",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/17/2025 08:09:06 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/17/2025 08:02:31 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/17/2025 08:02:31 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/16/2025 02:16:40 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "98626",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/15/2025 09:01:38 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/15/2025 09:01:38 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/15/2025 08:02:32 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/15/2025 08:02:32 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/14/2025 07:51:37 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/14/2025 07:51:37 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/14/2025 10:02:54 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "847.383.0295",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/14/2025 10:02:52 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "847.383.0295",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/14/2025 10:02:50 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "847.383.0295",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/13/2025 07:24:32 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/13/2025 07:24:32 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/13/2025 02:03:05 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "833.223.1609",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/13/2025 02:02:03 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "833.223.1609",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/13/2025 02:01:54 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "833.223.1609",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/13/2025 02:01:54 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "833.223.1609",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/13/2025 10:31:21 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "833.223.1609",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/13/2025 10:31:21 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "833.223.1609",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/13/2025 09:51:49 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "312.465.4628",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 07:48:48 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 07:48:48 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 07:24:07 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "866.960.1011",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 07:24:07 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "866.960.1011",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 11:55:46 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "82289",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 10:44:46 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.204.0692",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 10:33:48 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "815.262.9590",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 10:33:42 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "815.262.9590",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:06 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "224.210.0605",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "765.215.8370",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.702.2452",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "815.262.9590",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "281.793.4137",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.281.6608",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "608.345.5316",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.812.1634",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "815.790.1849",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "224.388.1603",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "815.529.4654",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "224.489.7107",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "630.625.2377",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "417.825.5910",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.209.9290",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:17:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.204.0692",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/12/2025 10:16:59 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 10:16:00 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "224.388.1603",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 10:15:46 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.812.1634",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/12/2025 10:15:26 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "815.529.4654",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 04:55:49 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 04:47:47 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "815.262.9590",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 04:04:04 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 04:03:59 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 04:03:27 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "224.489.7107",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 03:57:08 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "608.345.5316",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 02:20:17 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 02:20:16 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 02:17:10 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "815.529.4654",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 02:15:17 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "224.489.7107",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 10:30:00 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 10:30:00 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 09:01:10 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 09:01:10 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 08:57:37 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 08:57:37 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 08:57:32 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/11/2025 08:06:48 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/11/2025 08:06:48 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/10/2025 05:32:16 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "224.388.1603",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "815.262.9590",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "417.825.5910",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.702.2452",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "281.793.4137",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "630.625.2377",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "224.388.1603",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.204.0692",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.281.6608",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "224.210.0605",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "608.345.5316",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "224.489.7107",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "815.790.1849",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.209.9290",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "765.215.8370",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "815.529.4654",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:25:34 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.812.1634",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/10/2025 03:10:18 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.204.0692",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/10/2025 03:05:57 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "419.236.0046",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/10/2025 10:36:01 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "51004",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/10/2025 10:36:01 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "51004",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/10/2025 08:48:07 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/10/2025 08:48:07 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/09/2025 08:01:29 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/09/2025 08:01:29 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 03:44:40 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 03:21:18 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 03:21:18 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 03:19:52 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 03:19:52 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 03:05:02 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 03:05:02 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 02:19:41 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 02:19:41 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 02:19:38 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 02:18:15 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "224.202.7926",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 02:18:15 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "224.202.7926",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 12:46:43 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 12:45:45 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 12:45:45 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 12:00:53 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 11:42:09 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 11:42:09 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 08:03:14 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/07/2025 08:03:14 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/06/2025 08:02:31 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/06/2025 08:02:31 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/05/2025 10:32:55 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/05/2025 10:32:55 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/04/2025 02:57:30 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "866.960.1011",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/04/2025 08:03:52 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/04/2025 08:03:52 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/04/2025 08:03:35 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/04/2025 08:03:35 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/03/2025 02:18:25 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "728.207.1623",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/03/2025 01:34:30 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "82289",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/03/2025 11:56:09 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "469.826.4671",
+            "direction": "OUTGOING",
+            "nickName": "Marily"
+          },
+          {
+            "dateTime": "02/03/2025 10:08:28 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "408.676.1928",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/03/2025 10:08:26 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "408.676.1928",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/03/2025 10:08:26 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "408.676.1928",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "02/03/2025 08:08:20 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/03/2025 08:08:20 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/02/2025 04:05:15 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "888.308.7275",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/02/2025 04:05:15 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "888.308.7275",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/02/2025 01:52:17 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "MMS",
+            "description": "Pict Video MSG",
+            "totalUsage": 1,
+            "recipientNumber": "847.630.1959",
+            "direction": "INCOMING",
+            "nickName": "Ashley"
+          },
+          {
+            "dateTime": "02/02/2025 10:01:04 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "847.383.0295",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/02/2025 10:01:04 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "847.383.0295",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/02/2025 08:05:26 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/02/2025 08:05:26 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/01/2025 10:02:46 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/01/2025 09:40:46 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/01/2025 09:40:46 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/01/2025 07:47:42 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "02/01/2025 07:47:42 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/31/2025 01:49:01 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "33959",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/31/2025 01:49:00 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "33959",
+            "direction": "OUTGOING"
+          },
+          {
+            "dateTime": "01/31/2025 01:47:38 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "33959",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/31/2025 08:04:26 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/31/2025 08:04:26 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "61979",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/30/2025 04:07:30 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/30/2025 04:07:30 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/30/2025 10:00:57 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/29/2025 11:13:43 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/29/2025 11:13:43 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "46395",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/29/2025 11:06:24 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "74454",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/29/2025 10:34:28 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "68382",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/29/2025 10:33:29 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "57513",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/28/2025 11:09:14 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/28/2025 11:09:14 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "898287",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "01/28/2025 10:59:56 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Text Message",
+            "totalUsage": 1,
+            "recipientNumber": "224.291.8499",
+            "direction": "INCOMING"
+          }
+        ]
+      }
+    }
+  }
+}

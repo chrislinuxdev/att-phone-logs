@@ -1,0 +1,618 @@
+<head>
+  <meta charset="utf-8" />
+  <title>Enter Code</title>
+  <base href="/" />
+
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=9; IE=8; IE=7;IE=11; IE=EDGE"
+  />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0,shrink-to-fit=no"
+  />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- ADDING ADOBE CONTAINER HEADER -->
+  <script
+    src="https://signin.att.com/static/thirdparty/cobrowse/CobrowseIO.js"
+    async=""
+    crossorigin="anonymous"
+  ></script>
+  <script type="text/javascript">
+    var detmScriptLoadType = "async";
+    var detmContainerIsHaloC = true;
+    window.appDisableAutoPageload = true;
+
+    window.detmContainerSSAFPath =
+      "https://signin.att.com/static/thirdparty/adobe/ssaf_universal_client/ssaf-uc.js";
+
+    window.ssafHaloWorkerPath =
+      "https://signin.att.com/static/thirdparty/adobe/ssaf-worker.js";
+
+    window.detmContainerQuantumPath =
+      "https://signin.att.com/static/thirdparty/quantum/loaders/quantum-att-loader.js";
+
+    window.quantumMetricAssetLocation =
+      "https://signin.att.com/static/thirdparty/quantum/qscripts";
+  </script>
+
+  <script
+    id="analyticsHeaderScript"
+    type="text/javascript"
+    src="https://signin.att.com/static/thirdparty/adobe/detm-container-hdr.js"
+    class="next-head"
+    data-trigger-dtm="loadAnalytics"
+  ></script>
+  <script id="cobrowse-js">
+    (function (w, t, c, p, s, e) {
+      p = new Promise(function (r) {
+        w[c] = {
+          client: function () {
+            if (!s) {
+              s = document.createElement(t);
+              s.src =
+                "https://signin.att.com/static/thirdparty/cobrowse/CobrowseIO.js";
+              s.async = 1;
+              s.crossOrigin = "anonymous";
+              e = document.getElementsByTagName(t)[0];
+              e.parentNode.insertBefore(s, e);
+              s.onload = function () {
+                r(w[c]);
+              };
+            }
+            return p;
+          },
+        };
+      });
+    })(window, "script", "CobrowseIO");
+
+    window.CiamCobrowseConfig = {};
+
+    CobrowseIO.api = "https:\/\/cobrowse.att.com";
+    CobrowseIO.license = "ABYjkm6U_h0GiA";
+    CobrowseIO.registration = false;
+    CobrowseIO.redactedViews = [
+      "*[id^=\x27savedUserRecord\x27]",
+      "#confirmRemoveUserID",
+      "input[id^=\x27P_SQ\x27]",
+      "label[id^=\x27collisionID\x27][id$=\x27Label\x27]",
+      "app\-manual\-login :is(#userID, #password)",
+      "app\-user\-input #userBackButton",
+      "app\-update\-profile :is(#P_FIRSTNAME, #P_LASTNAME, #P_CTN, #P_ZIP, #P_EMAIL)",
+      "app\-password\-input #password",
+      "app\-change\-pw :is(#password, #verifyPassword)",
+      "app\-profile\-otp #codeValue",
+      "app\-enter\-code #codeValue",
+    ];
+    CobrowseIO.trustedOrigins = ["https:\/\/att.com", "https:\/\/*.att.com"];
+
+    CobrowseIO.client().then(function () {
+      CobrowseIO.start();
+    });
+  </script>
+
+  <script>
+    window.loginJspEnvVars = {
+      CMS_ERROR_IMG_URL:
+        "https://signin.att.com/static/siam/en/halo_c/cms/errors/default/images/",
+      CANCEL_URL:
+        "https://signin.att.com/dynamic/iamLRR/LrrController?IAM_OP=cancel&appName=m14186",
+      CMS_LGN_IMG_URL:
+        "https://signin.att.com/static/siam/en/halo_c/cms/login/default/images/",
+      opType: "VALIDATE_PIN",
+      APPNAME: "m14186",
+      LOGIN_UI_HEADER: "my Account",
+      RESEND_TIMEOUT: "2000",
+      userID: "cpevans061985@att.net@slid.dum",
+      ERROR_CODE: "921",
+      ENABLE_COBROWSE: "Y",
+      ACTIVATE_FOOTER_LINKS: "Y",
+      CMS_LGN_TEXT_URL:
+        "https://signin.att.com/static/siam/en/halo_c/cms/login/default/i18n/{lang}.json?v=29.5.3",
+      selectedOTPDest: "m2",
+      maskedOTPSelectedDestination: "xxx.xx2.4059",
+      loginSuccessURL:
+        "https://oidc.idp.clogin.att.com/mga/sps/oauth/oauth20/authorize?response_type=id_token&client_id=m14186&response_mode=form_post&scope=openid&nonce=oocSqN0N&state=from%3Dnx&redirect_uri=https%3A%2F%2Fwww.att.com%2Fmsapi%2Flogin%2Funauth%2Fservice%2Fv1%2Fhaloc%2Foidc%2Fredirect&alt_dest=https%3A%2F%2Fwww.att.com%2Fmsapi%2Flogin%2Funauth%2Fservice%2Fv1%2Fhaloc%2Foidc%2Fredirect",
+      BYPASS_2FA_URL_CLIENT: "https://www.att.com/acctmgmt/fastpmt/fastpayauth",
+      ACTIVATE_LOGO: "Y",
+      ACTIVATE_ADOBE_TAGGING_FOR_CLIENT: "Y",
+      logoURL: "/en/halo_c/images/logos/att_hz_lg_lkp_rgb_pos.svg",
+      trID: "a4eac2c1c710bdd5d0fa220a956cc5b55976b5e4",
+      CONTENT_STACK_HOST: "https://signin.att.com/static/siam",
+      otpPolicyUrl:
+        "https://oidc.idp.clogin.att.com/mga/sps/authsvc?PolicyId=urn:ibm:security:authentication:asf:otpAuth",
+      ACTIVATE_IP_MARKING: "Y",
+      IPMarkingCompany: "AT&T",
+      targetURL:
+        "https://oidc.idp.clogin.att.com/mga/sps/oauth/oauth20/authorize?response_type=id_token&client_id=m14186&response_mode=form_post&scope=openid&nonce=oocSqN0N&state=from%3Dnx&redirect_uri=https%3A%2F%2Fwww.att.com%2Fmsapi%2Flogin%2Funauth%2Fservice%2Fv1%2Fhaloc%2Foidc%2Fredirect&alt_dest=https%3A%2F%2Fwww.att.com%2Fmsapi%2Flogin%2Funauth%2Fservice%2Fv1%2Fhaloc%2Foidc%2Fredirect",
+    };
+
+    window.loginLanguage = "en";
+    window.pageToLoad = "otpEnterCode";
+  </script>
+
+  <script>
+    window.timeoutJspVars = {
+      timeoutMs: "599515",
+      redirectUrl:
+        "https://signin.att.com/dynamic/iamLRR/LrrController?IAM_OP=error&appName=m14186&errorCode=902.2",
+    };
+  </script>
+  <script
+    type="text/javascript"
+    src="https://signin.att.com/static/siam/en/halo_c/timeout_redirect/timeout.js?v=30.4.1"
+  ></script>
+  <link
+    rel="preload"
+    href="https://signin.att.com/static/siam/en/halo_c/halo-c-login/assets/fonts/att/ATTAleckSans/woff2/ATTAleckSans_W_Rg.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin=""
+  />
+
+  <link
+    rel="preload"
+    href="https://signin.att.com/static/siam/en/halo_c/halo-c-login/assets/fonts/att/ATTAleckSans/woff2/ATTAleckSans_W_Bd.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin=""
+  />
+  <link
+    rel="preload"
+    href="https://signin.att.com/static/siam/en/halo_c/images/logos/att_hz_lg_lkp_rgb_pos.svg"
+    as="image"
+    type="image/svg+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="https://signin.att.com/static/siam/en/halo_c/halo-c-login/styles.css?v=30.4.1"
+  />
+  <style>
+    .full-height[_ngcontent-ng-c3021268761] {
+      min-height: 100vh;
+    }
+  </style>
+  <style>
+    .screen-share-border[_ngcontent-ng-c3450047798] {
+      position: fixed;
+      inset: 0;
+      border: 8px solid #ff605d;
+      pointer-events: none;
+    }
+    .care-expert-pill[_ngcontent-ng-c3450047798] {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
+      width: max-content;
+    }
+    .care-expert-pill-inner[_ngcontent-ng-c3450047798] {
+      border: 8px solid #ff605d;
+      border-radius: 0 0 16px 16px;
+      background-color: #fff;
+    }
+    .end-screen-share[_ngcontent-ng-c3450047798] {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    .bg-red-600[_ngcontent-ng-c3450047798]:hover {
+      background-color: #c70032;
+      border-color: #c70032;
+    }
+    .bg-red-600[_ngcontent-ng-c3450047798] {
+      border-color: #c70032;
+    }
+    .cobrowse-status-badge[_ngcontent-ng-c3450047798] {
+      padding: 12px 8px 12px 0;
+    }
+  </style>
+  <style>
+    .footer-div[_ngcontent-ng-c62901331] {
+      margin-top: 48px;
+      margin-bottom: 24px;
+    }
+    .footer-links-div[_ngcontent-ng-c62901331] {
+      display: flex;
+      flex-direction: row;
+    }
+    .footer-links-div[_ngcontent-ng-c62901331]
+      app-footer-link[_ngcontent-ng-c62901331] {
+      margin-right: 24px;
+    }
+    .footer-links-div[_ngcontent-ng-c62901331]
+      app-footer-link[_ngcontent-ng-c62901331]:last-child {
+      margin-right: 0;
+    }
+    .copyright[_ngcontent-ng-c62901331] {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 767px) {
+      .footer-div[_ngcontent-ng-c62901331] {
+        margin-bottom: 32px;
+      }
+      .footer-links-div[_ngcontent-ng-c62901331] {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-links-div[_ngcontent-ng-c62901331]
+        app-footer-link[_ngcontent-ng-c62901331] {
+        margin-bottom: 10px;
+      }
+      .footer-links-div[_ngcontent-ng-c62901331]
+        app-footer-link[_ngcontent-ng-c62901331]:last-child {
+        margin-bottom: 0;
+      }
+      app-footer-link[_ngcontent-ng-c62901331] {
+        height: 24px;
+      }
+      .copyright[_ngcontent-ng-c62901331] {
+        margin-top: 16px;
+        justify-content: flex-start;
+      }
+    }
+  </style>
+  <style>
+    .header-logo-position-fr-qrcard[_ngcontent-ng-c1566362065] {
+      margin-left: 70px;
+      align-self: flex-start;
+    }
+    .header-logo-position-fr-learMore[_ngcontent-ng-c1566362065] {
+      margin-bottom: 48px;
+      align-self: flex-start;
+    }
+    .header-floating-logo-generic[_ngcontent-ng-c1566362065] {
+      margin-top: 32px;
+      margin-left: 70px;
+      margin-bottom: 64px;
+      align-self: flex-start;
+    }
+    .left-align-header-logo-desktop[_ngcontent-ng-c1566362065] {
+      align-self: flex-start;
+    }
+    .header-logo-image-no-bottom[_ngcontent-ng-c1566362065] {
+      margin-bottom: 0;
+    }
+    @media (max-width: 767px) {
+      .header-logo-position-fr-qrcard[_ngcontent-ng-c1566362065] {
+        margin-left: 0;
+        align-self: center;
+      }
+      .header-logo-position-fr-learMore[_ngcontent-ng-c1566362065] {
+        margin-bottom: 16px;
+        align-self: center;
+      }
+      .header-floating-logo-generic[_ngcontent-ng-c1566362065] {
+        margin-left: 0;
+        margin-bottom: 32px;
+        align-self: center;
+      }
+      .left-align-header-logo-desktop[_ngcontent-ng-c1566362065] {
+        align-self: center;
+        margin-bottom: 32px;
+      }
+      .header-logo-image-no-bottom[_ngcontent-ng-c1566362065] {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div
+    id="app-root"
+    _nghost-ng-c3021268761=""
+    ng-version="16.2.12"
+    app-version="30.4.1"
+  >
+    <div
+      _ngcontent-ng-c3021268761=""
+      id="appCompBackground"
+      class="full-width-background bg-white"
+    >
+      <div
+        _ngcontent-ng-c3021268761=""
+        id="appCompContainer"
+        class="container pad-l-none-sm pad-r-none-sm pad-t-none-sm pad-b-none-sm full-height flex flex-column"
+      >
+        <!---->
+        <div
+          _ngcontent-ng-c3021268761=""
+          id="appCompCardContainer"
+          class="row justify-center flex-1"
+        >
+          <div
+            _ngcontent-ng-c3021268761=""
+            id="appCompCardContDiv"
+            class="pad-none"
+          >
+            <!----><app-card _ngcontent-ng-c3021268761="" role="main"
+              ><div
+                class="card rel z0 flex flex-column no-border-sm radius-lg no-radius-sm mar-t-none-sm border-shadow login-card-no-height mar-t-xl-lg"
+              >
+                <div
+                  class="pad-lg-lg pad-xl-sm pad-t-lg-lg pad-t-xl pad-b-lg-lg pad-b-xl pad-l-lg pad-r-lg"
+                >
+                  <app-header class="flex-container" _nghost-ng-c1566362065=""
+                    ><img
+                      _ngcontent-ng-c1566362065=""
+                      id="headerLogoImage"
+                      alt=""
+                      src="https://signin.att.com/static/siam/en/halo_c/images/logos/att_hz_lg_lkp_rgb_pos.svg"
+                      class="header-logo-image mar-b-md-all"
+                    /><!----><!----><!----><!----></app-header
+                  ><!---->
+                  <div class="width-full">
+                    <router-outlet></router-outlet
+                    ><app-enter-code
+                      ><div>
+                        <h1
+                          id="enterCodeHeaderText"
+                          class="heading-lg text-center mar-b-xs-lg"
+                        >
+                          Let’s make sure it’s you
+                        </h1>
+                        <app-error><!----></app-error
+                        ><!---->
+                        <div
+                          id="enterCodeBodyText"
+                          class="font-regular type-base color-gray-700 text-center mar-b-md-all"
+                        >
+                          We sent a verification code to <b>xxx.xx2.4059</b>.
+                        </div>
+                        <div>
+                          <form
+                            novalidate=""
+                            id="enterCodeForm"
+                            method="post"
+                            action="https://oidc.idp.clogin.att.com/mga/sps/authsvc?PolicyId=urn:ibm:security:authentication:asf:otpAuth"
+                            class="ng-invalid ng-touched ng-dirty"
+                          >
+                            <input
+                              type="hidden"
+                              id="opType"
+                              name="opType"
+                              value="VALIDATE_PIN"
+                            /><input
+                              type="hidden"
+                              id="trID"
+                              name="trID"
+                              value="a4eac2c1c710bdd5d0fa220a956cc5b55976b5e4"
+                            /><input
+                              type="hidden"
+                              id="userID"
+                              name="userID"
+                              value="cpevans061985@att.net@slid.dum"
+                            /><input
+                              type="hidden"
+                              id="appName"
+                              name="appName"
+                              value="m14186"
+                            /><input
+                              type="hidden"
+                              id="targetURL"
+                              name="targetURL"
+                              value="https://oidc.idp.clogin.att.com/mga/sps/oauth/oauth20/authorize?response_type=id_token&amp;client_id=m14186&amp;response_mode=form_post&amp;scope=openid&amp;nonce=oocSqN0N&amp;state=from%3Dnx&amp;redirect_uri=https%3A%2F%2Fwww.att.com%2Fmsapi%2Flogin%2Funauth%2Fservice%2Fv1%2Fhaloc%2Foidc%2Fredirect&amp;alt_dest=https%3A%2F%2Fwww.att.com%2Fmsapi%2Flogin%2Funauth%2Fservice%2Fv1%2Fhaloc%2Foidc%2Fredirect"
+                            /><input
+                              type="hidden"
+                              id="opSubType"
+                              name="opSubType"
+                              formcontrolname="opSubType"
+                              value=""
+                              class="ng-untouched ng-pristine ng-valid"
+                            /><input
+                              type="hidden"
+                              id="selectedOTPDest"
+                              name="selectedOTPDest"
+                              value="m2"
+                            />
+                            <div class="form-row">
+                              <label
+                                id="codeLabel"
+                                for="codeValue"
+                                class="formfield-label error"
+                                >Enter code</label
+                              ><input
+                                id="codeValue"
+                                type="text"
+                                name="codeValue"
+                                formcontrolname="codeValue"
+                                autocomplete="one-time-code"
+                                spellcheck="false"
+                                autocapitalize="off"
+                                placeholder=""
+                                maxlength="6"
+                                inputmode="numeric"
+                                appnumberonly=""
+                                pattern="^[0-9]*$"
+                                aria-describedby="enterCodeInlineError"
+                                class="textfield ng-pristine ng-invalid error ng-touched"
+                                aria-invalid="true"
+                              />
+                              <div
+                                id="enterCodeInlineError"
+                                role="alert"
+                                class="formfield-msg"
+                              >
+                                Be sure to enter a 6-digit verification code.<!----><!---->
+                              </div>
+                            </div>
+                            <app-trust-browser-checkbox
+                              ><div
+                                id="rememberMyDeviceContainerDiv"
+                                class="mar-t-xs-lg ng-invalid ng-touched ng-dirty"
+                              >
+                                <label
+                                  id="rememberMyDeviceLabel"
+                                  for="rememberMyDevice"
+                                  class="checkbox inline-flex flex-items-top font-regular"
+                                  ><input
+                                    type="checkbox"
+                                    id="rememberMyDevice"
+                                    name="rememberMyDevice"
+                                    formcontrolname="rememberMyDevice"
+                                    aria-labelledby="rememberMyDeviceText"
+                                    class="ng-valid ng-dirty ng-touched"
+                                  />
+                                  <div class="checkbox-skin"></div>
+                                  <span
+                                    id="rememberMyDeviceText"
+                                    class="rad-chk-txt color-gray-700"
+                                    ><div id="rememberMyDeviceTextLine1">
+                                      Don’t ask me again on this browser.
+                                    </div>
+                                    <div
+                                      id="rememberMyDeviceTextLine2"
+                                      class="type-xs"
+                                    >
+                                      (Not recommended for public or shared
+                                      devices)
+                                    </div></span
+                                  ></label
+                                >
+                              </div></app-trust-browser-checkbox
+                            ><!---->
+                            <div
+                              id="enterCodeButtonsDiv"
+                              class="flex-column mar-t-lg-sm mar-t-md-lg"
+                            >
+                              <div
+                                class="flex-row justify-between row-reverse flex-items-center"
+                              >
+                                <app-button-spinner
+                                  ><button
+                                    aria-live="polite"
+                                    class="btn-primary"
+                                    id="enterCodeSendButton"
+                                    type="submit"
+                                    disabled=""
+                                    aria-disabled="true"
+                                  >
+                                    Continue<!----><!----><!---->
+                                  </button></app-button-spinner
+                                ><button
+                                  id="enterCodeSendNewCodeButton"
+                                  type="button"
+                                  class="btn-reset link-text3 solo type-sm"
+                                >
+                                  Try another way
+                                </button>
+                              </div>
+                              <div
+                                class="flex-row mar-t11 mar-b-xxs pad-b-xxxs"
+                              >
+                                <app-fast-pay-link
+                                  ><a
+                                    role="button"
+                                    class="link-text3 solo type-sm"
+                                    href="https://www.att.com/acctmgmt/fastpmt/fastpayauth"
+                                    id="enterCodeMakePaymentButton"
+                                    >Skip and make a payment</a
+                                  ></app-fast-pay-link
+                                >
+                              </div>
+                              <!---->
+                              <div class="flex-row mar-t11">
+                                <app-otp-cancel-button
+                                  ><button
+                                    type="button"
+                                    class="btn-reset link-text3 solo type-sm"
+                                    id="enterCodeCancelButton"
+                                  >
+                                    Cancel
+                                  </button></app-otp-cancel-button
+                                >
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div></app-enter-code
+                    ><!---->
+                  </div>
+                </div>
+              </div></app-card
+            >
+          </div>
+        </div>
+        <div _ngcontent-ng-c3021268761="" id="appCompFooterContainer">
+          <div
+            _ngcontent-ng-c3021268761=""
+            id="appCompFooterContDiv"
+            class="grid-col-12 pad-none"
+          >
+            <app-footer
+              _ngcontent-ng-c3021268761=""
+              role="contentinfo"
+              _nghost-ng-c62901331=""
+              ><div
+                _ngcontent-ng-c62901331=""
+                class="login-background footer-div pad-l-lg-sm pad-r-lg-sm"
+              >
+                <!---->
+                <div _ngcontent-ng-c62901331="" class="font-regular copyright">
+                  <span
+                    _ngcontent-ng-c62901331=""
+                    id="copyrightTextSpan"
+                    class="type-xs color-ui-medium-gray"
+                    >©2026 AT&amp;T Intellectual Property. All rights
+                    reserved.</span
+                  >
+                </div>
+                <!---->
+              </div></app-footer
+            ><!---->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!----><app-full-page-spinner _ngcontent-ng-c3021268761=""
+      ><!----></app-full-page-spinner
+    ><app-cobrowse-session-ui
+      _ngcontent-ng-c3021268761=""
+      _nghost-ng-c3450047798=""
+      ><!----></app-cobrowse-session-ui
+    >
+  </div>
+
+  <script
+    type="module"
+    src="https://signin.att.com/static/siam/en/halo_c/halo-c-login/runtime.js?v=30.4.1"
+  ></script>
+  <script
+    type="module"
+    src="https://signin.att.com/static/siam/en/halo_c/halo-c-login/polyfills.js?v=30.4.1"
+  ></script>
+  <script
+    type="module"
+    src="https://signin.att.com/static/siam/en/halo_c/halo-c-login/vendor.js?v=30.4.1"
+  ></script>
+  <script
+    type="module"
+    src="https://signin.att.com/static/siam/en/halo_c/halo-c-login/main.js?v=30.4.1"
+  ></script>
+  <script
+    type="module"
+    src="https://signin.att.com/static/siam/en/halo_c/halo-c-login/src_app_otp_enter-code_enter-code_module_ts.js?v=30.4.1"
+  ></script>
+
+  <script
+    id="analyticsFooterScript"
+    type="text/javascript"
+    src="https://signin.att.com/static/thirdparty/adobe/detm-container-ftr.js"
+  ></script>
+</body>
+<!-- ADDING ADOBE CONTAINER Footer --><iframe
+  style="display: none"
+  class="__cbio_ignored"
+  width="0"
+  height="0"
+></iframe>

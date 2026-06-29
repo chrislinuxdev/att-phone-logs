@@ -1,0 +1,51 @@
+{
+  "content": {
+    "232061707406": {
+      "3125045116": {
+        "totalCharges": 0,
+        "ResultType": "CURRENT",
+        "PaginationInfo": {
+          "moreRecordsPresent": false,
+          "nextSetAvailable": false,
+          "offset": 2,
+          "totalRecordsReturned": 3,
+          "totalRecordsAvailable": 3,
+          "nextOffsetToCall": 0
+        },
+        "UsageDetailList": [
+          {
+            "dateTime": "06/28/2026 01:19:43 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "97861",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "06/28/2026 12:18:09 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "312.823.5586",
+            "direction": "OUTGOING",
+            "nickName": "Mom"
+          },
+          {
+            "dateTime": "06/28/2026 12:18:09 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "3128235586",
+            "direction": "OUTGOING"
+          }
+        ]
+      }
+    }
+  }
+}

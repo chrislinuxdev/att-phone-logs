@@ -1,0 +1,405 @@
+{
+    "content": {
+        "accountNumber": "145295213",
+        "billFound": true,
+        "isMFEEligibleCustomer": false,
+        "billCycleData": [
+            {
+                "cycleStartDate": "06/28/2026",
+                "cycleEndDate": "07/27/2026",
+                "statementID": "UNBILLED",
+                "billDuration": "Jun 28, 2026 - Jul 27, 2026",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "firstName": "RIYA",
+                        "lastName": "EVANS",
+                        "fullName": "RIYA EVANS",
+                        "subscriberStatus": "ACTIVE",
+                        "deviceImageUrl": "/scmsassets/global/devices/phones/apple/apple-iphone-12-pro-max/defaultimage/Graphite-hero-zoom.png",
+                        "deviceModel": "iPhone 12 Pro Max A2342"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "firstName": "CHRIS",
+                        "lastName": "EVANS",
+                        "fullName": "CHRIS EVANS",
+                        "subscriberStatus": "ACTIVE",
+                        "deviceImageUrl": "/scmsassets/global/devices/phones/google/google-pixel-8-pro/defaultimage/bay-hero-zoom.png",
+                        "deviceModel": "G1MNW BYO"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "05/28/2026",
+                "cycleEndDate": "06/27/2026",
+                "statementID": "UNCUT",
+                "billDuration": "May 28, 2026 - Jun 27, 2026",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "firstName": "RIYA",
+                        "lastName": "EVANS",
+                        "fullName": "RIYA EVANS",
+                        "subscriberStatus": "ACTIVE",
+                        "deviceImageUrl": "/scmsassets/global/devices/phones/apple/apple-iphone-12-pro-max/defaultimage/Graphite-hero-zoom.png",
+                        "deviceModel": "iPhone 12 Pro Max A2342"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "firstName": "CHRIS",
+                        "lastName": "EVANS",
+                        "fullName": "CHRIS EVANS",
+                        "subscriberStatus": "ACTIVE",
+                        "deviceImageUrl": "/scmsassets/global/devices/phones/google/google-pixel-8-pro/defaultimage/bay-hero-zoom.png",
+                        "deviceModel": "G1MNW BYO"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "04/28/2026",
+                "cycleEndDate": "05/27/2026",
+                "billType": "ENBLR",
+                "statementID": "20260527-145295213-ENBLR-V",
+                "billDuration": "Apr 28, 2026 - May 27, 2026",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "03/28/2026",
+                "cycleEndDate": "04/27/2026",
+                "billType": "ENBLR",
+                "statementID": "20260427-145295213-ENBLR-V",
+                "billDuration": "Mar 28, 2026 - Apr 27, 2026",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "02/28/2026",
+                "cycleEndDate": "03/27/2026",
+                "billType": "ENBLR",
+                "statementID": "20260327-145295213-ENBLR-V",
+                "billDuration": "Feb 28, 2026 - Mar 27, 2026",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "01/28/2026",
+                "cycleEndDate": "02/27/2026",
+                "billType": "ENBLR",
+                "statementID": "20260227-145295213-ENBLR-V",
+                "billDuration": "Jan 28, 2026 - Feb 27, 2026",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "12/28/2025",
+                "cycleEndDate": "01/27/2026",
+                "billType": "ENBLR",
+                "statementID": "20260127-145295213-ENBLR-V",
+                "billDuration": "Dec 28, 2025 - Jan 27, 2026",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "11/28/2025",
+                "cycleEndDate": "12/27/2025",
+                "billType": "ENBLR",
+                "statementID": "20251227-145295213-ENBLR-V",
+                "billDuration": "Nov 28, 2025 - Dec 27, 2025",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "10/28/2025",
+                "cycleEndDate": "11/27/2025",
+                "billType": "ENBLR",
+                "statementID": "20251127-145295213-ENBLR-V",
+                "billDuration": "Oct 28, 2025 - Nov 27, 2025",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "09/28/2025",
+                "cycleEndDate": "10/27/2025",
+                "billType": "ENBLR",
+                "statementID": "20251027-145295213-ENBLR-V",
+                "billDuration": "Sep 28, 2025 - Oct 27, 2025",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "08/28/2025",
+                "cycleEndDate": "09/27/2025",
+                "billType": "ENBLR",
+                "statementID": "20250927-145295213-ENBLR-V",
+                "billDuration": "Aug 28, 2025 - Sep 27, 2025",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "07/28/2025",
+                "cycleEndDate": "08/27/2025",
+                "billType": "ENBLR",
+                "statementID": "20250827-145295213-ENBLR-V",
+                "billDuration": "Jul 28, 2025 - Aug 27, 2025",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "06/28/2025",
+                "cycleEndDate": "07/27/2025",
+                "billType": "ENBLR",
+                "statementID": "20250727-145295213-ENBLR-V",
+                "billDuration": "Jun 28, 2025 - Jul 27, 2025",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "05/28/2025",
+                "cycleEndDate": "06/27/2025",
+                "billType": "ENBLR",
+                "statementID": "20250627-145295213-ENBLR-V",
+                "billDuration": "May 28, 2025 - Jun 27, 2025",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "04/28/2025",
+                "cycleEndDate": "05/27/2025",
+                "billType": "ENBLR",
+                "statementID": "20250527-145295213-ENBLR-V",
+                "billDuration": "Apr 28, 2025 - May 27, 2025",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "03/28/2025",
+                "cycleEndDate": "04/27/2025",
+                "billType": "ENBLR",
+                "statementID": "20250427-145295213-ENBLR-V",
+                "billDuration": "Mar 28, 2025 - Apr 27, 2025",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "02/28/2025",
+                "cycleEndDate": "03/27/2025",
+                "billType": "ENBLR",
+                "statementID": "20250327-145295213-ENBLR-V",
+                "billDuration": "Feb 28, 2025 - Mar 27, 2025",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            },
+            {
+                "cycleStartDate": "01/28/2025",
+                "cycleEndDate": "02/27/2025",
+                "billType": "ENBLR",
+                "statementID": "20250227-145295213-ENBLR-V",
+                "billDuration": "Jan 28, 2025 - Feb 27, 2025",
+                "accountNumber": "145295213",
+                "wirelessSubscriberList": [
+                    {
+                        "ctn": "3125045116",
+                        "fullName": "WIRELESS CALLER"
+                    },
+                    {
+                        "ctn": "8479024059",
+                        "fullName": "CHRIS EVANS"
+                    }
+                ],
+                "servicesPresent": [
+                    "Wireless"
+                ]
+            }
+        ]
+    }
+}

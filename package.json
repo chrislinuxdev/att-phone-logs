@@ -1,0 +1,14 @@
+{
+  "name": "att-phone-logs",
+  "private": true,
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "build": "npm run --workspaces build",
+    "dev:api": "npm run -w apps/api start:dev",
+    "dev:web": "npm run -w apps/web dev",
+    "start:api": "npm run -w apps/api start"
+  }
+}

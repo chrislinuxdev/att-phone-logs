@@ -1,0 +1,45 @@
+{
+  "content": {
+    "232061707406": {
+      "3125045116": {
+        "totalCharges": 0,
+        "ResultType": "CURRENT",
+        "PaginationInfo": {
+          "moreRecordsPresent": false,
+          "nextSetAvailable": false,
+          "offset": 0,
+          "totalRecordsReturned": 2,
+          "totalRecordsAvailable": 2,
+          "nextOffsetToCall": 0
+        },
+        "UsageDetailList": [
+          {
+            "dateTime": "06/28/2026 05:28:20 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "totalUsage": 0,
+            "direction": "OUTGOING",
+            "numberCalled": "847.902.4059",
+            "callDuration": 138,
+            "callType": "NW",
+            "city": "WHEELING",
+            "state": "IL",
+            "nickName": "Chris"
+          },
+          {
+            "dateTime": "06/28/2026 03:27:29 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "totalUsage": 0,
+            "direction": "INCOMING",
+            "numberCalled": "708.230.0482",
+            "callDuration": 1,
+            "callType": "NW",
+            "city": "INCOMING",
+            "state": "CL"
+          }
+        ]
+      }
+    }
+  }
+}
