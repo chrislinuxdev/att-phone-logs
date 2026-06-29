@@ -54,6 +54,55 @@ h1 {
   white-space: nowrap;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.retrieve-button,
+.modal-actions button {
+  border: 1px solid #1f5f99;
+  background: #1f5f99;
+  color: #fff;
+  border-radius: 6px;
+  min-height: 40px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.retrieve-button:disabled,
+.modal-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.retrieval-status {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  border: 1px solid #c6d2df;
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  padding: 10px 12px;
+  color: #38546d;
+}
+
+.retrieval-status.failed {
+  border-color: #f4b4ae;
+  color: #b42318;
+}
+
+.retrieval-status.completed {
+  border-color: #9bd7bc;
+  color: #17663a;
+}
+
 .controls {
   display: grid;
   grid-template-columns: minmax(260px, 1.2fr) minmax(240px, 1fr);
@@ -234,6 +283,48 @@ th.active-sort {
   font-weight: 700;
 }
 
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgb(15 23 42 / 0.45);
+  padding: 18px;
+  z-index: 10;
+}
+
+.modal {
+  width: min(420px, 100%);
+  border-radius: 8px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 20px 50px rgb(15 23 42 / 0.24);
+}
+
+.modal h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.modal p {
+  color: #526d86;
+  margin-bottom: 14px;
+}
+
+.modal input {
+  width: 100%;
+  border: 1px solid #c6d2df;
+  border-radius: 6px;
+  min-height: 40px;
+  padding: 8px 10px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
 @media (max-width: 760px) {
   .app-shell {
     width: min(100% - 20px, 1440px);
@@ -246,6 +337,7 @@ th.active-sort {
   }
 
   .record-count,
+  .header-actions,
   .controls label,
   .toggle-row {
     margin-top: 14px;

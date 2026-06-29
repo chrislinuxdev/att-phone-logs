@@ -8,11 +8,36 @@
           "moreRecordsPresent": false,
           "nextSetAvailable": false,
           "offset": 0,
-          "totalRecordsReturned": 2,
-          "totalRecordsAvailable": 2,
+          "totalRecordsReturned": 4,
+          "totalRecordsAvailable": 4,
           "nextOffsetToCall": 0
         },
         "UsageDetailList": [
+          {
+            "dateTime": "06/29/2026 12:02:18 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "totalUsage": 0,
+            "direction": "INCOMING",
+            "numberCalled": "224.298.4458",
+            "callDuration": 1,
+            "callType": "DT",
+            "city": "INCOMING",
+            "state": "CL"
+          },
+          {
+            "dateTime": "06/29/2026 10:19:15 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "totalUsage": 0,
+            "direction": "INCOMING",
+            "numberCalled": "312.823.5586",
+            "callDuration": 27,
+            "callType": "DT",
+            "city": "INCOMING",
+            "state": "CL",
+            "nickName": "Mom"
+          },
           {
             "dateTime": "06/28/2026 05:28:20 PM",
             "charges": 0,

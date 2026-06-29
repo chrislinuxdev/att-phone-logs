@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type ServiceType = "VOICE" | "TEXT";
 type PhoneLogRow = Record<string, string | number | boolean>;
@@ -46,6 +46,19 @@ interface PhoneLogView {
   columnFilterOptions: Record<string, ColumnFilterOption[]>;
 }
 
+interface RetrievalJob {
+  id: string;
+  status: "running" | "waiting_for_confirmation_code" | "completed" | "failed";
+  message: string;
+  startedAt: string;
+  completedAt?: string;
+  error?: string;
+  result?: {
+    filesWritten: string[];
+    rowsWritten: number;
+  };
+}
+
 type SortState = {
   column: string;
   key: string;
@@ -61,10 +74,15 @@ const sortConfigByColumn: Record<string, { key: string; direction: "asc" | "desc
 };
 
 export function PhoneLogsApp() {
+  const refreshedRetrievalJobIds = useRef(new Set<string>());
   const [options, setOptions] = useState<PhoneLogOptions>({ files: [], aggregateOptions: [] });
   const [selectedId, setSelectedId] = useState("");
   const [view, setView] = useState<PhoneLogView | null>(null);
+  const [retrievalJob, setRetrievalJob] = useState<RetrievalJob | null>(null);
+  const [confirmationCode, setConfirmationCode] = useState("");
   const [loading, setLoading] = useState(true);
+  const [retrieving, setRetrieving] = useState(false);
+  const [submittingCode, setSubmittingCode] = useState(false);
   const [error, setError] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [incomingOnly, setIncomingOnly] = useState(false);
@@ -79,15 +97,48 @@ export function PhoneLogsApp() {
   });
 
   useEffect(() => {
-    fetch("/api/phone-logs/options")
-      .then(response => response.ok ? response.json() : Promise.reject(new Error(`Failed to load options (${response.status})`)))
-      .then((data: PhoneLogOptions) => {
-        setOptions(data);
-        setSelectedId(data.aggregateOptions.find(option => option.serviceType === "VOICE")?.id || data.files[0]?.id || "");
-      })
+    loadOptions()
       .catch((loadError: Error) => setError(loadError.message))
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    if (!retrievalJob || retrievalJob.status === "completed" || retrievalJob.status === "failed") {
+      setRetrieving(false);
+      return;
+    }
+
+    const interval = window.setInterval(() => {
+      fetch(`/api/phone-logs/retrieve/${retrievalJob.id}`)
+        .then(response => response.ok ? response.json() : Promise.reject(new Error(`Failed to load retrieval status (${response.status})`)))
+        .then((job: RetrievalJob) => setRetrievalJob(job))
+        .catch((loadError: Error) => setError(loadError.message));
+    }, 1500);
+
+    return () => window.clearInterval(interval);
+  }, [retrievalJob?.id, retrievalJob?.status]);
+
+  useEffect(() => {
+    if (!retrievalJob || retrievalJob.status !== "completed" || refreshedRetrievalJobIds.current.has(retrievalJob.id)) {
+      return;
+    }
+
+    refreshedRetrievalJobIds.current.add(retrievalJob.id);
+    setRetrieving(false);
+    refreshCurrentData();
+  }, [retrievalJob?.id, retrievalJob?.status]);
+
+  function loadOptions() {
+    return fetch("/api/phone-logs/options")
+      .then(response => response.ok ? response.json() : Promise.reject(new Error(`Failed to load options (${response.status})`)))
+      .then((data: PhoneLogOptions) => {
+        setOptions(data);
+
+        if (!selectedId) {
+          setSelectedId(data.aggregateOptions.find(option => option.serviceType === "VOICE")?.id || data.files[0]?.id || "");
+        }
+      });
+  }
 
   useEffect(() => {
     if (!selectedId) {
@@ -167,6 +218,66 @@ export function PhoneLogsApp() {
     });
   }
 
+  function startRetrieval() {
+    setError("");
+    setRetrieving(true);
+    fetch("/api/phone-logs/retrieve", { method: "POST" })
+      .then(response => response.ok ? response.json() : Promise.reject(new Error(`Failed to start retrieval (${response.status})`)))
+      .then((job: RetrievalJob) => setRetrievalJob(job))
+      .catch((startError: Error) => {
+        setRetrieving(false);
+        setError(startError.message);
+      });
+  }
+
+  function submitConfirmationCode() {
+    if (!retrievalJob) {
+      return;
+    }
+
+    setSubmittingCode(true);
+    fetch(`/api/phone-logs/retrieve/${retrievalJob.id}/confirmation-code`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        code: confirmationCode,
+      }),
+    })
+      .then(response => response.ok ? response.json() : Promise.reject(new Error(`Failed to submit confirmation code (${response.status})`)))
+      .then((job: RetrievalJob) => {
+        setRetrievalJob(job);
+        setConfirmationCode("");
+      })
+      .catch((submitError: Error) => setError(submitError.message))
+      .finally(() => setSubmittingCode(false));
+  }
+
+  function refreshCurrentData() {
+    setLoading(true);
+    loadOptions()
+      .then(() => {
+        if (selectedId) {
+          const [kind, serviceType, lineNumber] = selectedId.split(":");
+          const url = kind === "aggregate"
+            ? `/api/phone-logs/aggregate/${serviceType}/${encodeURIComponent(lineNumber)}`
+            : `/api/phone-logs/files/${encodeURIComponent(selectedId)}`;
+
+          return fetch(url)
+            .then(response => response.ok ? response.json() : Promise.reject(new Error(`Failed to refresh phone log data (${response.status})`)))
+            .then((data: PhoneLogView) => {
+              setView(data);
+              setColumnFilters(previous => pruneColumnFilters(previous, data));
+            });
+        }
+
+        return Promise.resolve();
+      })
+      .catch((refreshError: Error) => setError(refreshError.message))
+      .finally(() => setLoading(false));
+  }
+
   function toggleColumnFilter(column: string, value: string, checked: boolean) {
     setColumnFilters(previous => {
       const nextValues = new Set(previous[column] || []);
@@ -196,8 +307,21 @@ export function PhoneLogsApp() {
           <h1>Phone Logs</h1>
           <p>{view?.lineDisplay ? `Line ${view.lineDisplay}` : "Server-backed ATT phone-log viewer"}</p>
         </div>
-        <div className="record-count">{view ? `${sortedRows.length} ${view.serviceLabel} records` : ""}</div>
+        <div className="header-actions">
+          <button type="button" className="retrieve-button" onClick={startRetrieval} disabled={retrieving}>
+            {retrieving ? "Retrieving..." : "Retrieve Phone Logs"}
+          </button>
+          <div className="record-count">{view ? `${sortedRows.length} ${view.serviceLabel} records` : ""}</div>
+        </div>
       </header>
+
+      {retrievalJob ? (
+        <div className={`retrieval-status ${retrievalJob.status}`}>
+          <strong>{retrievalJob.message}</strong>
+          {retrievalJob.result ? <span>{retrievalJob.result.filesWritten.length} files written, {retrievalJob.result.rowsWritten} rows processed</span> : null}
+          {retrievalJob.error ? <span>{retrievalJob.error}</span> : null}
+        </div>
+      ) : null}
 
       <section className="controls" aria-label="Phone log controls">
         <label>
@@ -315,6 +439,30 @@ export function PhoneLogsApp() {
             </tbody>
           </table>
         </section>
+      ) : null}
+
+      {retrievalJob?.status === "waiting_for_confirmation_code" ? (
+        <div className="modal-backdrop" role="presentation">
+          <div className="modal" role="dialog" aria-modal="true" aria-labelledby="confirmation-code-title">
+            <h2 id="confirmation-code-title">AT&amp;T Confirmation Code</h2>
+            <p>Enter the confirmation code from AT&amp;T to continue retrieving phone logs.</p>
+            <input
+              autoFocus
+              value={confirmationCode}
+              onChange={event => setConfirmationCode(event.target.value)}
+              onKeyDown={event => {
+                if (event.key === "Enter" && confirmationCode.trim()) {
+                  submitConfirmationCode();
+                }
+              }}
+            />
+            <div className="modal-actions">
+              <button type="button" onClick={submitConfirmationCode} disabled={submittingCode || !confirmationCode.trim()}>
+                {submittingCode ? "Submitting..." : "Submit Code"}
+              </button>
+            </div>
+          </div>
+        </div>
       ) : null}
     </main>
   );

@@ -8,11 +8,51 @@
           "moreRecordsPresent": false,
           "nextSetAvailable": false,
           "offset": 2,
-          "totalRecordsReturned": 3,
-          "totalRecordsAvailable": 3,
+          "totalRecordsReturned": 7,
+          "totalRecordsAvailable": 7,
           "nextOffsetToCall": 0
         },
         "UsageDetailList": [
+          {
+            "dateTime": "06/29/2026 09:58:09 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "470.291.8968",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "06/29/2026 09:58:09 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "470.291.8968",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "06/29/2026 09:52:54 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "06/29/2026 09:52:54 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "28732",
+            "direction": "INCOMING"
+          },
           {
             "dateTime": "06/28/2026 01:19:43 PM",
             "charges": 0,
@@ -41,7 +81,7 @@
             "usageType": "TEXT",
             "description": "Mobile to Mobile",
             "totalUsage": 1,
-            "recipientNumber": "3128235586",
+            "recipientNumber": "312.823.5586",
             "direction": "OUTGOING"
           }
         ]
