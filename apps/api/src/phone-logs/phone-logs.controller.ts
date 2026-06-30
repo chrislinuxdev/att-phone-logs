@@ -30,6 +30,11 @@ export class PhoneLogsController {
     return this.phoneLogsService.getAggregate(serviceType, lineNumber);
   }
 
+  @Post("nicknames")
+  saveNickname(@Body("phoneNumber") phoneNumber: string, @Body("nickname") nickname: string) {
+    return this.phoneLogsService.saveNickname(phoneNumber, nickname);
+  }
+
   @Post("retrieve")
   startRetrieval(): PublicRetrievalJob {
     return this.retrievePhoneLogsService.startRetrieval();

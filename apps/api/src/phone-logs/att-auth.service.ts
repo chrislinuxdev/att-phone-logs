@@ -2,6 +2,7 @@ import { Injectable } from "@nestjs/common";
 import * as fs from "fs";
 import * as path from "path";
 import { loadDotEnv, parseBoolean } from "./env.util";
+import { PhoneLogsDatabaseService } from "./phone-logs.db";
 
 const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
@@ -14,6 +15,8 @@ type VerificationCodeRequest = () => Promise<string>;
 
 @Injectable()
 export class AttAuthService {
+  constructor(private readonly db: PhoneLogsDatabaseService) {}
+
   async getAttCookie(options: { requestVerificationCode: VerificationCodeRequest }) {
     const repoRoot = this.resolveRepoRoot();
     const envPath = path.join(repoRoot, ".env");
@@ -131,7 +134,7 @@ export class AttAuthService {
         throw new Error("ATT login succeeded but no cookies were captured.");
       }
 
-      fs.writeFileSync(path.join(repoRoot, "att_cookies.txt"), trimmedCookieHeader);
+      await this.db.saveCookieHistory(trimmedCookieHeader, "att-login");
       await this.captureAllPages("success", browser, context);
       return trimmedCookieHeader;
     } catch (error) {

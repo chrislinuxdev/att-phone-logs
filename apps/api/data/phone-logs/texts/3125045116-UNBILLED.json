@@ -8,11 +8,31 @@
           "moreRecordsPresent": false,
           "nextSetAvailable": false,
           "offset": 2,
-          "totalRecordsReturned": 7,
-          "totalRecordsAvailable": 7,
+          "totalRecordsReturned": 9,
+          "totalRecordsAvailable": 9,
           "nextOffsetToCall": 0
         },
         "UsageDetailList": [
+          {
+            "dateTime": "06/29/2026 12:17:18 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "30574",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "06/29/2026 12:17:18 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "30574",
+            "direction": "INCOMING"
+          },
           {
             "dateTime": "06/29/2026 09:58:09 AM",
             "charges": 0,

@@ -90,6 +90,9 @@ export function PhoneLogsApp() {
   const [unmatchedOnly, setUnmatchedOnly] = useState(false);
   const [shortNumbersOnly, setShortNumbersOnly] = useState(false);
   const [columnFilters, setColumnFilters] = useState<Record<string, string[]>>({});
+  const [editingNicknameNumber, setEditingNicknameNumber] = useState("");
+  const [nicknameDrafts, setNicknameDrafts] = useState<Record<string, string>>({});
+  const [savingNicknameNumber, setSavingNicknameNumber] = useState("");
   const [sortState, setSortState] = useState<SortState>({
     column: "Date",
     key: "dateTime",
@@ -300,6 +303,53 @@ export function PhoneLogsApp() {
     });
   }
 
+  function editNickname(row: PhoneLogRow) {
+    const phoneNumber = getRowNicknamePhoneNumber(row);
+
+    if (!phoneNumber) {
+      return;
+    }
+
+    setEditingNicknameNumber(phoneNumber);
+    setNicknameDrafts(previous => ({
+      ...previous,
+      [phoneNumber]: String(row["Display Nickname"] || ""),
+    }));
+  }
+
+  function cancelNicknameEdit(phoneNumber: string) {
+    setEditingNicknameNumber(previous => previous === phoneNumber ? "" : previous);
+  }
+
+  function saveNickname(row: PhoneLogRow) {
+    const phoneNumber = getRowNicknamePhoneNumber(row);
+    const nickname = String(nicknameDrafts[phoneNumber] || "").trim();
+
+    if (!phoneNumber || !nickname) {
+      return;
+    }
+
+    setError("");
+    setSavingNicknameNumber(phoneNumber);
+    fetch("/api/phone-logs/nicknames", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        phoneNumber,
+        nickname,
+      }),
+    })
+      .then(response => response.ok ? response.json() : response.text().then(text => Promise.reject(new Error(text || `Failed to save nickname (${response.status})`))))
+      .then(() => {
+        setEditingNicknameNumber("");
+        return refreshCurrentData();
+      })
+      .catch((saveError: Error) => setError(saveError.message))
+      .finally(() => setSavingNicknameNumber(""));
+  }
+
   return (
     <main className="app-shell">
       <header className="page-header">
@@ -422,6 +472,7 @@ export function PhoneLogsApp() {
                     </th>
                   );
                 })}
+                <th className="nickname-action-header">Nickname Action</th>
               </tr>
             </thead>
             <tbody>
@@ -429,11 +480,24 @@ export function PhoneLogsApp() {
                 <tr key={`${row["Sort Timestamp"]}-${row.Number}-${row.Direction}-${rowIndex}`}>
                   {view.columns.map(column => (
                     <td key={column}>
-                      {column === "Nickname" && Boolean(row["Nickname Overridden"]) ? (
-                        <span className="nickname-override">{getCellText(row, column)}</span>
-                      ) : getCellText(row, column)}
+                      {renderGridCell(row, column)}
                     </td>
                   ))}
+                  <td className="nickname-action-cell">
+                    {renderNicknameActionCell({
+                      row,
+                      editingNicknameNumber,
+                      nicknameDrafts,
+                      savingNicknameNumber,
+                      onCancel: cancelNicknameEdit,
+                      onDraftChange: (phoneNumber, nickname) => setNicknameDrafts(previous => ({
+                        ...previous,
+                        [phoneNumber]: nickname,
+                      })),
+                      onEdit: editNickname,
+                      onSave: saveNickname,
+                    })}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -466,6 +530,76 @@ export function PhoneLogsApp() {
       ) : null}
     </main>
   );
+}
+
+function renderGridCell(row: PhoneLogRow, column: string) {
+  const cellText = getCellText(row, column);
+
+  if (column === "Nickname" && Boolean(row["Nickname Overridden"])) {
+    return <span className="nickname-override">{cellText}</span>;
+  }
+
+  return cellText;
+}
+
+function renderNicknameActionCell(options: {
+  row: PhoneLogRow;
+  editingNicknameNumber: string;
+  nicknameDrafts: Record<string, string>;
+  savingNicknameNumber: string;
+  onCancel: (phoneNumber: string) => void;
+  onDraftChange: (phoneNumber: string, nickname: string) => void;
+  onEdit: (row: PhoneLogRow) => void;
+  onSave: (row: PhoneLogRow) => void;
+}) {
+  const phoneNumber = getRowNicknamePhoneNumber(options.row);
+  const displayNickname = getCellText(options.row, "Nickname");
+  const isEditing = Boolean(phoneNumber && options.editingNicknameNumber === phoneNumber);
+  const isSaving = Boolean(phoneNumber && options.savingNicknameNumber === phoneNumber);
+  const draft = phoneNumber ? options.nicknameDrafts[phoneNumber] ?? displayNickname : displayNickname;
+
+  if (!phoneNumber) {
+    return null;
+  }
+
+  if (isEditing) {
+    return (
+      <div className="nickname-editor">
+        <input
+          value={draft}
+          onChange={event => options.onDraftChange(phoneNumber, event.target.value)}
+          onKeyDown={event => {
+            if (event.key === "Enter" && draft.trim()) {
+              options.onSave(options.row);
+            }
+
+            if (event.key === "Escape") {
+              options.onCancel(phoneNumber);
+            }
+          }}
+          autoFocus
+        />
+        <button type="button" onClick={() => options.onSave(options.row)} disabled={isSaving || !draft.trim()}>
+          {isSaving ? "Saving" : "Save"}
+        </button>
+        <button type="button" onClick={() => options.onCancel(phoneNumber)} disabled={isSaving}>
+          Cancel
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="nickname-action">
+      <button type="button" onClick={() => options.onEdit(options.row)}>
+        {displayNickname ? "Edit Nickname" : "Add Nickname"}
+      </button>
+    </div>
+  );
+}
+
+function getRowNicknamePhoneNumber(row: PhoneLogRow) {
+  return String(row["Normalized Number"] || row.Number || "").replace(/\D/g, "");
 }
 
 function pruneColumnFilters(previous: Record<string, string[]>, view: PhoneLogView) {

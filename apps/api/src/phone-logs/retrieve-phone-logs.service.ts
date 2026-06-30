@@ -1,13 +1,12 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
-import { createRequire } from "module";
 import * as fs from "fs";
 import * as path from "path";
 import { AttAuthService } from "./att-auth.service";
 import { loadDotEnv, parseBoolean } from "./env.util";
-import { formatDisplayRows, formatPhoneNumber, normalizePhoneNumber } from "./phone-log-format";
+import { formatDisplayRows, normalizePhoneNumber, normalizeStoredPhoneNumbers } from "./phone-log-format";
+import { PhoneLogsDatabaseService } from "./phone-logs.db";
 import { ServiceType } from "./phone-logs.types";
 
-const requireFromHere = createRequire(__filename);
 const phoneNumbers = ["3125045116", "8479024059"];
 
 type RetrievalStatus = "running" | "waiting_for_confirmation_code" | "completed" | "failed";
@@ -45,11 +44,13 @@ export interface PublicRetrievalJob {
 export class RetrievePhoneLogsService {
   private readonly repoRoot = this.resolveRepoRoot();
   private readonly dataRoot = this.resolveDataRoot();
-  private readonly localPhoneNicknamesFile = path.join(this.dataRoot, "local-phone-nicknames.js");
   private readonly jobs = new Map<string, RetrievalJob>();
   private activeJobId = "";
 
-  constructor(private readonly attAuthService: AttAuthService) {}
+  constructor(
+    private readonly attAuthService: AttAuthService,
+    private readonly db: PhoneLogsDatabaseService,
+  ) {}
 
   startRetrieval() {
     if (this.activeJobId) {
@@ -142,18 +143,25 @@ export class RetrievePhoneLogsService {
 
     for (const serviceType of config.serviceTypes) {
       if (config.useAllBillingStatements && config.clearUnbilledOnAllStatements) {
-        this.clearPhoneLogArtifacts("UNBILLED", serviceType, config.phoneNumber);
+        await this.clearPhoneLogArtifacts("UNBILLED", serviceType, config.phoneNumber);
       }
 
       for (const statementId of selectedStatementIds) {
         job.message = `Fetching ${serviceType.toLowerCase()} logs for ${statementId}.`;
         const details = await this.fetchDetails(statementId, serviceType, config.phoneNumber, headers);
+        normalizeStoredPhoneNumbers(details);
         const apiDetailsTable = formatDisplayRows(details, serviceType, config.phoneNumber, () => "");
-        this.maybeRegisterLocalNicknamesFromRows(apiDetailsTable);
+        await this.maybeRegisterLocalNicknamesFromRows(apiDetailsTable);
 
-        const detailsTable = formatDisplayRows(details, serviceType, config.phoneNumber, this.getLocalNickname.bind(this));
+        const nicknames = await this.db.getNicknameMap();
+        const detailsTable = formatDisplayRows(
+          details,
+          serviceType,
+          config.phoneNumber,
+          phoneNumber => nicknames.get(normalizePhoneNumber(phoneNumber)) || "",
+        );
         rowsWritten += detailsTable.length;
-        filesWritten.push(this.writeRawPayloadFile(statementId, serviceType, details, config.phoneNumber));
+        filesWritten.push(await this.persistPhoneLogPayload(statementId, serviceType, details, config.phoneNumber));
       }
     }
 
@@ -307,21 +315,39 @@ export class RetrievePhoneLogsService {
     return JSON.parse(await response.text());
   }
 
-  private writeRawPayloadFile(statementId: string, serviceType: ServiceType, details: unknown, phoneNumber: string) {
+  private async persistPhoneLogPayload(statementId: string, serviceType: ServiceType, details: unknown, phoneNumber: string) {
+    const backupPath = this.writeRawPayloadBackupFile(statementId, serviceType, details, phoneNumber);
+    const fileName = path.basename(backupPath);
+
+    await this.db.upsertPhoneLogPayload({
+      serviceType,
+      phoneNumber,
+      statementId,
+      fileName,
+      payload: details,
+      backupPath,
+      source: "att-retrieval",
+      fetchedAt: new Date(),
+    });
+
+    return backupPath;
+  }
+
+  private writeRawPayloadBackupFile(statementId: string, serviceType: ServiceType, details: unknown, phoneNumber: string) {
     const { sourcePath } = this.getPhoneLogFilePaths(statementId, serviceType, phoneNumber);
 
     fs.mkdirSync(path.dirname(sourcePath), { recursive: true });
-    this.normalizeStoredPhoneNumbers(details);
     fs.writeFileSync(sourcePath, `${JSON.stringify(details, null, 2)}\n`);
 
     return sourcePath;
   }
 
-  private clearPhoneLogArtifacts(statementId: string, serviceType: ServiceType, phoneNumber: string) {
+  private async clearPhoneLogArtifacts(statementId: string, serviceType: ServiceType, phoneNumber: string) {
     const { sourcePath, dataPath } = this.getPhoneLogFilePaths(statementId, serviceType, phoneNumber);
 
     fs.rmSync(sourcePath, { force: true });
     fs.rmSync(dataPath, { force: true });
+    await this.db.deletePhoneLogPayload(serviceType, phoneNumber, statementId);
   }
 
   private getPhoneLogFilePaths(statementId: string, serviceType: ServiceType, phoneNumber: string) {
@@ -339,50 +365,10 @@ export class RetrievePhoneLogsService {
     return fileBase.replace(/[^a-z0-9._-]/gi, "_");
   }
 
-  private normalizeStoredPhoneNumbers(value: unknown): unknown {
-    if (Array.isArray(value)) {
-      value.forEach(item => this.normalizeStoredPhoneNumbers(item));
-      return value;
+  private async maybeRegisterLocalNicknamesFromRows(rows: Array<Record<string, unknown>>) {
+    for (const row of rows) {
+      await this.db.importNicknameIfMissing(row.Number, row.Nickname, "att-api");
     }
-
-    if (!value || typeof value !== "object") {
-      return value;
-    }
-
-    Object.entries(value).forEach(([key, item]) => {
-      if ((key === "numberCalled" || key === "recipientNumber") && typeof item === "string") {
-        value[key] = formatPhoneNumber(item);
-        return;
-      }
-
-      this.normalizeStoredPhoneNumbers(item);
-    });
-
-    return value;
-  }
-
-  private maybeRegisterLocalNicknamesFromRows(rows: Array<Record<string, unknown>>) {
-    const nicknames = this.getNicknameModule();
-    let didChange = false;
-
-    rows.forEach(row => {
-      if (nicknames.registerLocalNickname(row.Number, row.Nickname)) {
-        didChange = true;
-      }
-    });
-
-    if (didChange) {
-      fs.writeFileSync(this.localPhoneNicknamesFile, `${nicknames.serializePhoneLogLocalNicknamesModule()}\n`);
-      delete require.cache[requireFromHere.resolve(this.localPhoneNicknamesFile)];
-    }
-  }
-
-  private getLocalNickname(phoneNumber: string) {
-    return this.getNicknameModule().getLocalNickname(phoneNumber);
-  }
-
-  private getNicknameModule() {
-    return requireFromHere(this.localPhoneNicknamesFile);
   }
 
   private failJob(job: RetrievalJob, error: Error) {

@@ -98,6 +98,28 @@ export function formatPhoneNumber(phoneNumber: unknown) {
   return digits.length === 10 ? `${digits.slice(0, 3)}.${digits.slice(3, 6)}.${digits.slice(6)}` : digits;
 }
 
+export function normalizeStoredPhoneNumbers(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    value.forEach(item => normalizeStoredPhoneNumbers(item));
+    return value;
+  }
+
+  if (!value || typeof value !== "object") {
+    return value;
+  }
+
+  Object.entries(value).forEach(([key, item]) => {
+    if ((key === "numberCalled" || key === "recipientNumber") && typeof item === "string") {
+      value[key] = formatPhoneNumber(item);
+      return;
+    }
+
+    normalizeStoredPhoneNumbers(item);
+  });
+
+  return value;
+}
+
 export function getRowPhoneNumber(row: Record<string, unknown>) {
   return String(row.numberCalled || row.recipientNumber || "");
 }

@@ -1,7 +1,4 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
-import { createRequire } from "module";
-import * as fs from "fs";
-import * as path from "path";
+import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import {
   columnsByServiceType,
   dedupeRows,
@@ -9,7 +6,9 @@ import {
   formatFileName,
   formatPhoneNumber,
   getServiceLabel,
+  normalizePhoneNumber,
 } from "./phone-log-format";
+import { PhoneLogsDatabaseService } from "./phone-logs.db";
 import {
   AggregateOption,
   ColumnFilterOption,
@@ -19,20 +18,14 @@ import {
   ServiceType,
 } from "./phone-logs.types";
 
-const requireFromHere = createRequire(__filename);
 const blankFilterValue = "__BLANK__";
-
-const dataConfigs: Array<{ sourceName: string; serviceType: ServiceType }> = [
-  { sourceName: "calls", serviceType: "VOICE" },
-  { sourceName: "texts", serviceType: "TEXT" },
-];
 
 @Injectable()
 export class PhoneLogsService {
-  private readonly dataRoot = this.resolveDataRoot();
+  constructor(private readonly db: PhoneLogsDatabaseService) {}
 
-  getOptions() {
-    const files = this.getFileMetadata();
+  async getOptions() {
+    const files = await this.getFileMetadata();
 
     return {
       files,
@@ -40,16 +33,18 @@ export class PhoneLogsService {
     };
   }
 
-  getFileMetadata(): PhoneLogFileMetadata[] {
-    return this.getAllFiles().map(({ rows, ...metadata }) => ({
+  async getFileMetadata(): Promise<PhoneLogFileMetadata[]> {
+    const files = await this.getAllFiles();
+    return files.map(({ rows, ...metadata }) => ({
       ...metadata,
       recordCount: rows.length,
     }));
   }
 
-  getFile(id: string): PhoneLogView {
+  async getFile(id: string): Promise<PhoneLogView> {
     const decodedId = decodeURIComponent(id);
-    const file = this.getAllFiles().find(item => item.id === decodedId);
+    const files = await this.getAllFiles();
+    const file = files.find(item => item.id === decodedId);
 
     if (!file) {
       throw new NotFoundException(`Phone log file not found: ${decodedId}`);
@@ -58,13 +53,14 @@ export class PhoneLogsService {
     return this.toView(file);
   }
 
-  getAggregate(serviceType: ServiceType, lineNumber: string): PhoneLogView {
+  async getAggregate(serviceType: ServiceType, lineNumber: string): Promise<PhoneLogView> {
     if (!columnsByServiceType[serviceType]) {
       throw new NotFoundException(`Unsupported service type: ${serviceType}`);
     }
 
     const normalizedLine = formatPhoneNumber(lineNumber);
-    const rows = this.getAllFiles()
+    const files = await this.getAllFiles();
+    const rows = files
       .filter(file => file.serviceType === serviceType && file.lineNumber === normalizedLine)
       .flatMap(file => file.rows)
       .sort((left, right) => Number(right["Sort Timestamp"]) - Number(left["Sort Timestamp"]));
@@ -89,35 +85,42 @@ export class PhoneLogsService {
     return this.toView(file);
   }
 
-  private getAllFiles(): PhoneLogFile[] {
-    return dataConfigs.flatMap(config => {
-      const sourceDir = path.join(this.dataRoot, config.sourceName);
+  async saveNickname(phoneNumber: unknown, nickname: unknown) {
+    const saved = await this.db.upsertNicknameMapping(phoneNumber, nickname, "react-page");
 
-      if (!fs.existsSync(sourceDir)) {
-        return [];
-      }
-
-      return fs.readdirSync(sourceDir)
-        .filter(fileName => fileName.endsWith(".json"))
-        .sort((left, right) => right.localeCompare(left))
-        .map(fileName => this.readPhoneLogFile(sourceDir, fileName, config.serviceType));
-    });
-  }
-
-  private readPhoneLogFile(sourceDir: string, fileName: string, serviceType: ServiceType): PhoneLogFile {
-    const filePath = path.join(sourceDir, fileName);
-    const fileContent = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    const rawRows = formatDisplayRows(fileContent, serviceType, "", this.getLocalNickname.bind(this));
-    const rows = dedupeRows(rawRows, serviceType);
-    const lineNumber = this.getLineNumberFromRows(rows);
-    const displayName = `${formatFileName(fileName)} (${getServiceLabel(serviceType)})`;
+    if (!saved) {
+      throw new BadRequestException("Phone number and nickname are required.");
+    }
 
     return {
-      id: `${serviceType}:${fileName}`,
-      fileName,
+      phoneNumber: saved.phoneNumber,
+      nickname: saved.nickname,
+    };
+  }
+
+  private async getAllFiles(): Promise<PhoneLogFile[]> {
+    const records = await this.db.getPhoneLogPayloads();
+    const nicknames = await this.db.getNicknameMap();
+    const getLocalNickname = (phoneNumber: string) => nicknames.get(normalizePhoneNumber(phoneNumber)) || "";
+
+    return records.map(record => this.toPhoneLogFile(record, getLocalNickname));
+  }
+
+  private toPhoneLogFile(
+    record: { serviceType: ServiceType; phoneNumber: string; fileName: string; payload: unknown },
+    getLocalNickname: (phoneNumber: string) => string,
+  ): PhoneLogFile {
+    const rawRows = formatDisplayRows(record.payload, record.serviceType, record.phoneNumber, getLocalNickname);
+    const rows = dedupeRows(rawRows, record.serviceType);
+    const lineNumber = this.getLineNumberFromRows(rows);
+    const displayName = `${formatFileName(record.fileName)} (${getServiceLabel(record.serviceType)})`;
+
+    return {
+      id: `${record.serviceType}:${record.fileName}`,
+      fileName: record.fileName,
       displayName,
-      serviceType,
-      serviceLabel: getServiceLabel(serviceType),
+      serviceType: record.serviceType,
+      serviceLabel: getServiceLabel(record.serviceType),
       lineNumber,
       lineDisplay: lineNumber,
       rows,
@@ -207,33 +210,5 @@ export class PhoneLogsService {
   private getLineNumberFromRows(rows: PhoneLogFile["rows"]) {
     const row = rows.find(item => item.Line);
     return row ? String(row.Line) : "";
-  }
-
-  private getLocalNickname(phoneNumber: string) {
-    const nicknames = this.getNicknameModule();
-    return nicknames.getLocalNickname(phoneNumber);
-  }
-
-  private getNicknameModule(): { getLocalNickname: (phoneNumber: string) => string } {
-    const nicknameFile = path.join(this.dataRoot, "local-phone-nicknames.js");
-    return requireFromHere(nicknameFile);
-  }
-
-  private resolveDataRoot() {
-    const candidates = [
-      process.env.PHONE_LOGS_DATA_DIR,
-      path.resolve(process.cwd(), "data", "phone-logs"),
-      path.resolve(process.cwd(), "apps", "api", "data", "phone-logs"),
-      path.resolve(__dirname, "..", "..", "data", "phone-logs"),
-      path.resolve(__dirname, "..", "..", "..", "data", "phone-logs"),
-    ].filter(Boolean) as string[];
-
-    const dataRoot = candidates.find(candidate => fs.existsSync(candidate));
-
-    if (!dataRoot) {
-      return candidates[0];
-    }
-
-    return dataRoot;
   }
 }

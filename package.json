@@ -9,6 +9,7 @@
     "build": "npm run --workspaces build",
     "dev:api": "npm run -w apps/api start:dev",
     "dev:web": "npm run -w apps/web dev",
+    "import:phone-logs": "npm run -w apps/api import:phone-logs",
     "start:api": "npm run -w apps/api start"
   }
 }

@@ -283,6 +283,56 @@ th.active-sort {
   font-weight: 700;
 }
 
+.nickname-action-header,
+.nickname-action-cell {
+  text-align: right;
+  width: 190px;
+}
+
+.nickname-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nickname-action button,
+.nickname-editor button {
+  border: 1px solid #b9c7d6;
+  background: #ffffff;
+  color: #263747;
+  border-radius: 6px;
+  min-height: 30px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.nickname-action button:hover,
+.nickname-editor button:hover {
+  background: #edf2f7;
+}
+
+.nickname-editor {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.nickname-editor input {
+  width: 180px;
+  border: 1px solid #c6d2df;
+  border-radius: 6px;
+  min-height: 30px;
+  padding: 4px 8px;
+}
+
+.nickname-editor button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .modal-backdrop {
   position: fixed;
   inset: 0;
