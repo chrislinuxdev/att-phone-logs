@@ -343,21 +343,18 @@ export class RetrievePhoneLogsService {
   }
 
   private async clearPhoneLogArtifacts(statementId: string, serviceType: ServiceType, phoneNumber: string) {
-    const { sourcePath, dataPath } = this.getPhoneLogFilePaths(statementId, serviceType, phoneNumber);
+    const { sourcePath } = this.getPhoneLogFilePaths(statementId, serviceType, phoneNumber);
 
     fs.rmSync(sourcePath, { force: true });
-    fs.rmSync(dataPath, { force: true });
     await this.db.deletePhoneLogPayload(serviceType, phoneNumber, statementId);
   }
 
   private getPhoneLogFilePaths(statementId: string, serviceType: ServiceType, phoneNumber: string) {
     const sourceName = serviceType === "TEXT" ? "texts" : "calls";
-    const dataName = serviceType === "TEXT" ? "texts-data" : "calls-data";
     const fileBase = `${this.sanitizeFileBase(phoneNumber)}-${this.sanitizeFileBase(statementId)}`;
 
     return {
       sourcePath: path.join(this.dataRoot, sourceName, `${fileBase}.json`),
-      dataPath: path.join(this.dataRoot, dataName, `${fileBase}.js`),
     };
   }
 
