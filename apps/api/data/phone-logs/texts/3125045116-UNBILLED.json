@@ -8,11 +8,21 @@
           "moreRecordsPresent": false,
           "nextSetAvailable": false,
           "offset": 2,
-          "totalRecordsReturned": 16,
-          "totalRecordsAvailable": 16,
+          "totalRecordsReturned": 17,
+          "totalRecordsAvailable": 17,
           "nextOffsetToCall": 0
         },
         "UsageDetailList": [
+          {
+            "dateTime": "07/01/2026 03:33:24 PM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "94917",
+            "direction": "INCOMING"
+          },
           {
             "dateTime": "06/30/2026 11:41:21 AM",
             "charges": 0,

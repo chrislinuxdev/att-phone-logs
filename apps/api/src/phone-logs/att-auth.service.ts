@@ -27,10 +27,13 @@ export class AttAuthService {
     const username = process.env.ATT_USERNAME;
     const password = process.env.ATT_PASSWORD;
     const saveScreenshots = parseBoolean(process.env.ATT_SAVE_SCREENSHOTS, true);
+    const userDataDir = process.env.ATT_CHROME_USER_DATA_DIR || path.join(repoRoot, ".chrome-profile", "att");
 
     if (!username || !password) {
       throw new Error("Missing ATT_USERNAME or ATT_PASSWORD in .env");
     }
+
+    fs.mkdirSync(userDataDir, { recursive: true });
 
     if (saveScreenshots) {
       fs.mkdirSync(screenshotDir, { recursive: true });
@@ -50,6 +53,7 @@ export class AttAuthService {
     const browser = await puppeteer.launch({
       headless: true,
       executablePath: process.env.ATT_CHROME_EXECUTABLE_PATH || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      userDataDir,
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -87,6 +91,10 @@ export class AttAuthService {
         timeout: 60000,
       });
 
+      if (this.isOverviewUrl(page.url())) {
+        return await this.finalizeAuthenticatedSession(browser, context);
+      }
+
       await page.waitForSelector("#userID", { timeout: 15000 });
       await page.type("#userID", username, { delay: 100 });
       await page.click("#continueFromUserLogin");
@@ -94,6 +102,12 @@ export class AttAuthService {
 
       const passwordField = await this.waitForSelectorAcrossFrames(page, '#password, input[name="password"], input[type="password"]', 30000);
       await passwordField.elementHandle.type(password, { delay: 100 });
+      await this.checkCheckboxAcrossFrames(page, [
+        'input[name="keepMeSignedIn"]',
+        'input[id="keepMeSignedIn"]',
+        'input[name="rememberMe"]',
+        'input[id="rememberMe"]',
+      ]);
 
       const passwordSubmitState = await this.waitForFreshPasswordSubmitState(passwordField.frame, 10000);
       this.logPasswordSubmitState(passwordSubmitState);
@@ -126,17 +140,7 @@ export class AttAuthService {
         throw new Error(`ATT login did not reach ${ATT_OVERVIEW_URL}. Current URL: ${page.url() || "(blank)"}`);
       }
 
-      const cookies = await browser.defaultBrowserContext().cookies();
-      const cookieHeader = cookies.map(cookie => `${cookie.name}=${cookie.value}`).join("; ");
-      const trimmedCookieHeader = this.trimCookieHeader(cookieHeader);
-
-      if (!trimmedCookieHeader) {
-        throw new Error("ATT login succeeded but no cookies were captured.");
-      }
-
-      await this.db.saveCookieHistory(trimmedCookieHeader, "att-login");
-      await this.captureAllPages("success", browser, context);
-      return trimmedCookieHeader;
+      return await this.finalizeAuthenticatedSession(browser, context);
     } catch (error) {
       await this.captureAllPages("error", browser, context);
       throw error;
@@ -163,6 +167,10 @@ export class AttAuthService {
           throw new Error("Verification code was not entered.");
         }
 
+        await this.checkCheckboxAcrossFrames(page, [
+          'input[name="rememberMyDevice"]',
+          'input[id="rememberMyDevice"]',
+        ]);
         await codeValueField.elementHandle.click({ clickCount: 3 }).catch(() => {});
         await codeValueField.elementHandle.type(verificationCode, { delay: 100 });
         await this.submitVerificationStep(page);
@@ -215,6 +223,29 @@ export class AttAuthService {
     }
 
     throw new Error(`Waiting for selector \`${selector}\` failed`);
+  }
+
+  private async checkCheckboxAcrossFrames(page: any, selectors: string[]) {
+    for (const selector of selectors) {
+      const checkbox = await this.waitForSelectorAcrossFrames(page, selector, 1000).catch(() => null);
+
+      if (!checkbox) {
+        continue;
+      }
+
+      const isChecked = await checkbox.frame.evaluate((currentSelector: string) => {
+        const input = document.querySelector(currentSelector) as HTMLInputElement | null;
+        return Boolean(input?.checked);
+      }, selector).catch(() => false);
+
+      if (!isChecked) {
+        await checkbox.elementHandle.click().catch(() => {});
+      }
+
+      return true;
+    }
+
+    return false;
   }
 
   private async waitForFreshPasswordSubmitState(frame: any, timeoutMs: number) {
@@ -402,6 +433,20 @@ export class AttAuthService {
   private trimCookieHeader(cookieHeader: string) {
     const cookieStartIndex = cookieHeader.indexOf("s_ecid=");
     return cookieStartIndex >= 0 ? cookieHeader.slice(cookieStartIndex) : cookieHeader;
+  }
+
+  private async finalizeAuthenticatedSession(browser: any, context: any) {
+    const cookies = await browser.defaultBrowserContext().cookies();
+    const cookieHeader = cookies.map(cookie => `${cookie.name}=${cookie.value}`).join("; ");
+    const trimmedCookieHeader = this.trimCookieHeader(cookieHeader);
+
+    if (!trimmedCookieHeader) {
+      throw new Error("ATT login succeeded but no cookies were captured.");
+    }
+
+    await this.db.saveCookieHistory(trimmedCookieHeader, "att-login", true);
+    await this.captureAllPages("success", browser, context);
+    return trimmedCookieHeader;
   }
 
   private isOverviewUrl(currentUrl: string) {

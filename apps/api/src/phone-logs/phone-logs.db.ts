@@ -262,4 +262,13 @@ export class PhoneLogsDatabaseService implements OnModuleInit, OnModuleDestroy {
       capturedAt: new Date(),
     });
   }
+
+  async getLatestCookieHistory() {
+    await connectPhoneLogsDatabase();
+    return getCookieHistoryModel()
+      .findOne()
+      .sort({ capturedAt: -1, createdAt: -1 })
+      .lean()
+      .exec();
+  }
 }

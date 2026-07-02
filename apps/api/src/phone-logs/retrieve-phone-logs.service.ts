@@ -116,17 +116,21 @@ export class RetrievePhoneLogsService {
     const config = this.getConfig();
     const headers = this.getBaseHeaders();
 
-    job.message = "Capturing AT&T authentication cookie.";
-    const cookie = await this.attAuthService.getAttCookie({
-      requestVerificationCode: () => this.waitForConfirmationCode(job),
-    });
-    headers.set("Cookie", cookie);
+    job.message = "Trying saved AT&T authentication cookie.";
+    let billCycleResponse = await this.tryBillCycleResponseWithSavedCookie(config.phoneNumber, headers);
 
-    job.message = "Fetching available billing statements.";
-    const billCycleResponse = await fetch(
-      "https://www.att.com/msapi/usageorch/v2/info/billcycle/subscriber",
-      this.getBillCycleRequestOptions(config.phoneNumber, headers),
-    );
+    if (!billCycleResponse) {
+      job.message = "Capturing AT&T authentication cookie.";
+      const cookie = await this.attAuthService.getAttCookie({
+        requestVerificationCode: () => this.waitForConfirmationCode(job),
+      });
+      headers.set("Cookie", cookie);
+
+      job.message = "Fetching available billing statements.";
+      billCycleResponse = await this.fetchBillCycleResponse(config.phoneNumber, headers);
+    } else {
+      job.message = "Fetching available billing statements.";
+    }
 
     if (!billCycleResponse.ok) {
       throw new Error(await this.getHttpErrorMessage("Bill cycle request", billCycleResponse));
@@ -254,6 +258,33 @@ export class RetrievePhoneLogsService {
       }),
       redirect: "follow" as RequestRedirect,
     };
+  }
+
+  private async fetchBillCycleResponse(phoneNumber: string, headers: Headers) {
+    return fetch(
+      "https://www.att.com/msapi/usageorch/v2/info/billcycle/subscriber",
+      this.getBillCycleRequestOptions(phoneNumber, headers),
+    );
+  }
+
+  private async tryBillCycleResponseWithSavedCookie(phoneNumber: string, headers: Headers) {
+    const savedCookie = await this.db.getLatestCookieHistory();
+
+    if (!savedCookie?.cookieHeader) {
+      return null;
+    }
+
+    const savedCookieHeaders = new Headers(headers);
+    savedCookieHeaders.set("Cookie", savedCookie.cookieHeader);
+
+    const response = await this.fetchBillCycleResponse(phoneNumber, savedCookieHeaders);
+
+    if (!response.ok) {
+      return null;
+    }
+
+    headers.set("Cookie", savedCookie.cookieHeader);
+    return response;
   }
 
   private getStatementIds(value: unknown): unknown[] {
