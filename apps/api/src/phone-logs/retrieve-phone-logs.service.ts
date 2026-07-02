@@ -17,6 +17,7 @@ interface RetrievalJob {
   message: string;
   startedAt: string;
   completedAt?: string;
+  failedStep?: string;
   error?: string;
   result?: RetrievalResult;
   codeResolver?: (code: string) => void;
@@ -36,6 +37,7 @@ export interface PublicRetrievalJob {
   message: string;
   startedAt: string;
   completedAt?: string;
+  failedStep?: string;
   error?: string;
   result?: RetrievalResult;
 }
@@ -127,7 +129,7 @@ export class RetrievePhoneLogsService {
     );
 
     if (!billCycleResponse.ok) {
-      throw new Error(`Bill cycle request failed with status ${billCycleResponse.status}`);
+      throw new Error(await this.getHttpErrorMessage("Bill cycle request", billCycleResponse));
     }
 
     const billCycleText = await billCycleResponse.text();
@@ -309,7 +311,7 @@ export class RetrievePhoneLogsService {
     );
 
     if (!response.ok) {
-      throw new Error(`Detail request failed with status ${response.status}`);
+      throw new Error(await this.getHttpErrorMessage(`${serviceType.toLowerCase()} detail request for ${statementId}`, response));
     }
 
     return JSON.parse(await response.text());
@@ -368,13 +370,26 @@ export class RetrievePhoneLogsService {
     }
   }
 
-  private failJob(job: RetrievalJob, error: Error) {
+  private failJob(job: RetrievalJob, error: unknown) {
     job.status = "failed";
+    job.failedStep = job.message;
     job.message = "Phone-log retrieval failed.";
-    job.error = error.message;
+    job.error = this.getErrorMessage(error);
     job.completedAt = new Date().toISOString();
     job.codeResolver = undefined;
     this.activeJobId = "";
+  }
+
+  private getErrorMessage(error: unknown) {
+    return error instanceof Error ? error.message : String(error || "Unknown retrieval error.");
+  }
+
+  private async getHttpErrorMessage(label: string, response: Response) {
+    const body = await response.text().catch(() => "");
+    const preview = body.trim().replace(/\s+/g, " ").slice(0, 500);
+    return preview
+      ? `${label} failed with status ${response.status} ${response.statusText}: ${preview}`
+      : `${label} failed with status ${response.status} ${response.statusText}`;
   }
 
   private toPublicJob(job: RetrievalJob): PublicRetrievalJob {
@@ -384,6 +399,7 @@ export class RetrievePhoneLogsService {
       message: job.message,
       startedAt: job.startedAt,
       completedAt: job.completedAt,
+      failedStep: job.failedStep,
       error: job.error,
       result: job.result,
     };

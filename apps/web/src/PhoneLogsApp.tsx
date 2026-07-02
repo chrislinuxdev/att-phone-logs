@@ -52,6 +52,7 @@ interface RetrievalJob {
   message: string;
   startedAt: string;
   completedAt?: string;
+  failedStep?: string;
   error?: string;
   result?: {
     filesWritten: string[];
@@ -368,6 +369,7 @@ export function PhoneLogsApp() {
       {retrievalJob ? (
         <div className={`retrieval-status ${retrievalJob.status}`}>
           <strong>{retrievalJob.message}</strong>
+          {retrievalJob.failedStep ? <span>Failed while: {retrievalJob.failedStep}</span> : null}
           {retrievalJob.result ? <span>{retrievalJob.result.filesWritten.length} files written, {retrievalJob.result.rowsWritten} rows processed</span> : null}
           {retrievalJob.error ? <span>{retrievalJob.error}</span> : null}
         </div>

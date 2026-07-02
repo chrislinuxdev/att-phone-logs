@@ -7,9 +7,13 @@
   ],
   "scripts": {
     "build": "npm run --workspaces build",
+    "dev": "concurrently -k -n api,web -c blue,green \"npm run dev:api\" \"npm run dev:web\"",
     "dev:api": "npm run -w apps/api start:dev",
     "dev:web": "npm run -w apps/web dev",
     "import:phone-logs": "npm run -w apps/api import:phone-logs",
     "start:api": "npm run -w apps/api start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.3"
   }
 }

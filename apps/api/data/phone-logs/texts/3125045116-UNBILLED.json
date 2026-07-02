@@ -8,11 +8,86 @@
           "moreRecordsPresent": false,
           "nextSetAvailable": false,
           "offset": 2,
-          "totalRecordsReturned": 9,
-          "totalRecordsAvailable": 9,
+          "totalRecordsReturned": 16,
+          "totalRecordsAvailable": 16,
           "nextOffsetToCall": 0
         },
         "UsageDetailList": [
+          {
+            "dateTime": "06/30/2026 11:41:21 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "215.434.9295",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "06/30/2026 10:56:50 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "866.971.7275",
+            "direction": "INCOMING"
+          },
+          {
+            "dateTime": "06/30/2026 10:42:02 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "24273",
+            "direction": "INCOMING",
+            "nickName": "Chase Short Code"
+          },
+          {
+            "dateTime": "06/30/2026 07:12:38 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "41646",
+            "direction": "INCOMING",
+            "nickName": "WalMart Short"
+          },
+          {
+            "dateTime": "06/30/2026 07:11:06 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "41646",
+            "direction": "INCOMING",
+            "nickName": "WalMart Short"
+          },
+          {
+            "dateTime": "06/30/2026 06:57:20 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "41646",
+            "direction": "INCOMING",
+            "nickName": "WalMart Short"
+          },
+          {
+            "dateTime": "06/30/2026 06:34:03 AM",
+            "charges": 0,
+            "roamingIndicator": "H",
+            "usageType": "TEXT",
+            "description": "Mobile to Mobile",
+            "totalUsage": 1,
+            "recipientNumber": "41646",
+            "direction": "INCOMING",
+            "nickName": "WalMart Short"
+          },
           {
             "dateTime": "06/29/2026 12:17:18 PM",
             "charges": 0,
